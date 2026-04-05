@@ -2,18 +2,16 @@ class Tester:
 
     def __init__(self, name):
         self.name = name
-        if name == 'tester_2':
-                self.deadline = True
-        else:
-            self.deadline = False
+        self.deadline = True
 
-    def work_hard(self):
+    def work_hard(self, deadline=True):
+        self.deadline = deadline
         if self.deadline:
             print(self.name, 'Что ж, ещё часок поработаю!')
         else:
             print(self.name, 'Можно отдыхать')
 
 tester_1 = Tester(name='tester_1')
-tester_1.work_hard()
+tester_1.work_hard(deadline=False)
 tester_2 = Tester(name='tester_2')
-tester_2.work_hard()
+tester_2.work_hard(deadline=True)
